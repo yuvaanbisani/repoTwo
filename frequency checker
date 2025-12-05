@@ -1,0 +1,7 @@
+codict = {'Codingal': 3, 'is': 2, 'best': 2, 'for': 2, 'Coding': 1}
+input = input("Enter the frequency to be checked: ")
+count = 0
+for key in codict:
+    if codict[key] == int(input):
+        count += 1
+print("Number of keys with the given frequency: " + str(count))
