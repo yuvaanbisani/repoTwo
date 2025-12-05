@@ -1,0 +1,35 @@
+studentdata = { "id1" :
+    { "name" :["John"] , 
+      "class" : ["VI"] , 
+      "subjects" : ["English","Maths","Science"]},
+    "id2" :
+        { "name" :["Marie"] , 
+          "class" : ["VI"] ,
+          "subjects" : ["English","Maths","Science"]},
+    "id3" :
+        { "name" :["John"],
+         "class" : ["VI"] , 
+         "subjects" : ["English","Maths","Science"]},
+    "id4" :
+        { "name" :["Karthik"] , 
+         "class" : ["VI"] ,
+         "subjects" : ["English","Maths","Science"]},}
+result = {}
+for key, value in studentdata.items():
+    if value not in result.values():
+        result[key] = value
+print("The dictionary after removing duplicate values are : " + str(result))
+
+#frequency
+testdict = {"CODINGal" : 2, "is" : 1, "a fun" : 2, "and" : 1, "educative" : 3, "platform" : 1}
+k = 4
+result = 0
+for key in testdict:
+    if testdict[key] == k:
+        result += 1
+print("The number of keys having the given frequency is : " + str(result))
+
+#country code
+countrycodes = {'United States': '16', 'India': '91', 'China': '86', 'Russia': '78', 'Germany': '29'}
+print("countrycode for india is : " + countrycodes.get('India', 'Not Found'))
+print("countrycode for australia is : " + countrycodes.get('Australia', 'Not Found'))
