@@ -1,0 +1,27 @@
+myset = {1, 2, 3, 4, 4, 5,6, 9, 8 ,5}
+print(myset)
+myset = {1.0, "hehe", 47, (89, 87, 2,4), True, False}
+print(myset)
+print(myset.add(True))
+print(len(myset))
+myset.pop()
+print(myset)
+myset.pop() ; myset.pop()
+print(myset)
+
+#set intersection
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+z = print("intersection of set1 and set2 is :",
+          set1.intersection(set2))
+print(set1.union(set2))
+print(set1.difference(set2))
+print(set2 - set1)
+
+#arraies
+import array as arr
+arraynum = arr.array("i", [1, 1, 1, 1,1, 2 ,11, 1,11, 1,2, 3,45])
+print("arraynum =" , str(arraynum))
+print("number of occurences of number 1 is :", arraynum.count(1))
+print("reverse order of arraynum is :", )
+arraynum.reverse(
