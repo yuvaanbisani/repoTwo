@@ -1,0 +1,13 @@
+#odd list comprehension
+n = int(input("Enter a number: "))
+oddnumbers = [x for x in range(1, n + 1) if x % 2 != 0]
+print("Odd numbers up to", n, "are:", oddnumbers)
+
+#fruit list comprehension (i hope this counts)
+fruits = ["apple", "banana", "strawberry", "pear", "blueberry", "kiwi", "grape"]
+for f in fruits:
+    f = int(fruits.index(f))
+    Fruit = str(fruits[f:])
+    F = Fruit[2:3]
+    Fruits = F.upper() + str(Fruit[3:(int(len(Fruit)-2))])
+    print(Fruits)
