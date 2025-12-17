@@ -1,0 +1,51 @@
+import random
+board = [" "] * 9
+
+def showboard():
+    """show the board"""
+    print(f"\n{board[0]} | {board[1]} | {board[2]}")
+    print("--+---+---")
+    print(f"{board[3]} | {board[4]} | {board[5]}")
+    print("--+---+---")
+    print(f"{board[6]} | {board[7]} | {board[8]}")
+    
+def winner(symbol):
+    """check if someone won"""
+    wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+    for combo in wins:
+        if board[combo[0]] == board[combo[1]] == board[combo[2]] == symbol:
+            return True
+    return False
+
+def play():
+    """main game"""
+    print("TIC TAC TOE!! you: X ai: O")
+    for turn in range(9):
+        showboard()
+        if turn % 2 == 0:
+            while True:
+                try:
+                    move = int(input("your move (0 - 8) : "))
+                    if board[move] == " ":
+                        board[move] = "X"
+                        break
+                    print("that spot is already taken")
+                except:
+                    print("enter 0 - 8.")
+            if  winner("X"):
+                showboard()
+                print("YU WIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                return
+        else:
+            empty = [i for i in range(9) if board[i] == " "] 
+            move = random.choice(empty)
+            board[move] = "O"
+            print(f"computer chose {move}")
+            if winner("O"):
+                showboard()
+                print("COMPUTER WINS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                return
+    showboard()
+    print("TIE GAME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+play()
