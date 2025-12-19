@@ -1,0 +1,44 @@
+class Student:
+    grade = 10
+    print("hi! i am a student of grade", grade)
+ob = Student()
+ob = Student()
+
+#vehicle
+class Vehicle:
+    def __init__(self, maximumspeed, mileage):
+        self.maximumspeed = maximumspeed
+        self.mileage = mileage
+modelX = Vehicle(240, 18)
+print("model maximum speed :", modelX.maximumspeed)
+print("model mileage :", modelX.mileage)
+
+#class parrot
+class Parrot:
+    species = "bird" # class att
+    def __init__(self, name, age): # instance att
+        self.name = name
+        self.age = age
+blu = Parrot("Polly", "2") #instanciating the parrot
+woo = Parrot("Wolly", "2.0001")
+print("blu is a {}".format(blu.species)) #accessing class att
+print("woo is also a {}".format(woo.species))
+print("{} is {} y/o".format(blu.name, blu.age)) #accessing instance att
+print("{} is {} y/o".format(woo.name, woo.age))
+
+
+class Fruits:
+    def __init__(self, name, colour, taste):
+        self.name = name
+        self.colour = colour
+        self.taste = taste
+    def describe(self):
+        print(self.name, "is", self.colour, "and tastes", self.taste)
+fruit1 = Fruits("lemon", "yellow", "sour")
+fruit2 = Fruits("pear", "green , sometimes yellow", "sweet")
+fruit3 = Fruits("grape", "black/purple", "sweet(maybe)")
+fruit4 = Fruits("kiwi", "brown", "sweet/salty")
+fruitlist = [fruit1, fruit2, fruit3, fruit4]
+print(fruitlist)
+for fruit in fruitlist:
+    fruit.describe()
