@@ -5,8 +5,8 @@ class Dog:
         self.color = color
 scribbles = Dog("poodle", "brown")
 gidget = Dog("chihuahua", "tan")
-print("scribbles is a {}", format(scribbles.species))
-print("scribbles is a {} {}", format(scribbles.breed, scribbles.color))
-print("gidget is a {}", format(gidget.species))
-print("gidget is a {} {}", format(gidget.breed, gidget.color))
+print("scribbles is a {}".format(scribbles.species))
+print("scribbles is a {},{}".format(scribbles.breed, scribbles.color))
+print("gidget is a {}".format(gidget.species))
+print("gidget is a {},{}".format(gidget.breed, gidget.color))
  
