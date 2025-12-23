@@ -1,0 +1,14 @@
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self, radius):
+        self.area = (7/22) * radius ** 2
+        print(self.area)
+    def perimeter(self, radius):
+        self.perimeter = 2 * (7/22) * radius
+        print(self.perimeter)
+
+radiusInput = int(input("enter radius (int) : "))
+circularCircle = Circle(radiusInput)
+circularCircle.area(radiusInput)
+circularCircle.perimeter(radiusInput)
