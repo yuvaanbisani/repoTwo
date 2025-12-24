@@ -1,0 +1,16 @@
+class Vehicle:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+    def fare(self):
+        print(self.capacity * 100)
+
+class Bus(Vehicle):
+    def fare(self):
+        basefare = self.capacity * 100
+        maintenancecharge = basefare * 0.10
+        finalfare = basefare + maintenancecharge
+        print("INR",finalfare)
+
+schoolbus = Bus("school volvo", 50)
+totalfare = schoolbus.fare()
