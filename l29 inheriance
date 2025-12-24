@@ -1,0 +1,47 @@
+#is this a bus?
+class Vehicle:
+    def __init__(self, name, speed, mileage):
+        self.name = name
+        self.speed = speed
+        self.mileage = mileage
+class Bus(Vehicle):
+    pass
+schoolbus = Bus("school volvo", 200, 20)
+print("vehicle name :", schoolbus.name, "vehicle speed :", schoolbus.speed, "vehicle mileage :", schoolbus.mileage)
+
+#employee inheritance
+class Employee:
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+    def Display(self):
+        print("name :", self.name)
+        print("id no. :", self.id)
+class Person(Employee):
+    def __init__(self, name, id, salary, post):
+        self.salary = salary
+        self.post = post
+        super().__init__( name, id)
+        print("salary :", self.salary)
+        print("post :", self.post)
+emp = Person("thames", 545, 78000, "salesperson")
+emp.Display()
+
+#super penguin
+class Bird:
+    def __init__(self):
+        print("BIRB IS READY.")
+    def whoisdis(self):
+        print("bird!!")
+    def swim(self):
+        print("swim FASTER!!!!!!!!!!!!!!!!!!")
+class Penguin(Bird):
+    def __init__(self):
+        super().__init__()
+        print("PENGUIN IS READY!!!!!!!!!!!!!!!")
+    def run(self):
+        print("RUN FASTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+penny = Penguin()
+penny.whoisdis()
+penny.swim()
+penny.run()
