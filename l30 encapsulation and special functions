@@ -1,0 +1,37 @@
+#keep it private!
+class Myclass:
+    __privatevariable = 27
+    def __private__(self):
+        print("this is a private variable :", self.__privatevariable)
+    def accessprivate(self):
+        print("accessing private variable :", self.__privatevariable)
+object = Myclass()
+object.accessprivate()
+object.__private__()
+
+#computer price
+class Computer:
+    def __init__(self):
+        self.__maxprice = 900
+    def sell(self):
+        print("the selling price : {}".format(self.__maxprice))
+    def setmaxprice(self, price):
+        self.__maxprice = price
+c = Computer()
+c.sell()
+c.setmaxprice(45000)
+c.sell()
+
+#point function
+class Point():
+    def __init__(self, x = 0, y = 0):
+        self.x = x
+        self.y = y
+    def __str__(self):
+        return "({0}, {1})".format(self.x, self.y)
+p1 = Point(2, 3)
+print(p1)
+p2 = Point()
+print(p2)
+p3 = Point(67)
+print(p3)
