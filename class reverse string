@@ -1,0 +1,11 @@
+class Reverse:
+    def __init__(self, s = ""):
+        self.s = s
+        #print(s)   remove the # if needed.
+    def getreverse(self):
+        return self.s[::-1]
+
+userinput = input("Enter a word: ")
+reversedobject = Reverse(userinput)
+
+print(f"The reversed string is: {reversedobject.getreverse()}")
