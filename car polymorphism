@@ -1,0 +1,21 @@
+#polymorphing a random vehicle!!!!!!!! (wait until the end)
+class BMW:
+    def fueltype(self):
+        print("petrol")
+    def maxspeed(self):
+        print(380)
+
+class Ferrari:
+    def fueltype(self):
+        print("diesel")
+    def maxspeed(self):
+        print(450)
+
+carbmw = BMW()
+
+carferrari = Ferrari()
+
+for car in (carbmw, carferrari):
+    car.fueltype()
+    car.maxspeed()
+ 
