@@ -1,0 +1,64 @@
+
+import random
+#overload operations
+class A:
+    def __init__(self, a):
+        self.a = a
+    def __lt__(self, other):
+        if self.a < other.a:
+            return "ob1 is less than ob2"
+        else:
+            return "ob2 is less than ob1"
+    def __eq__(self, other):
+        if self.a == other.a:
+            return "both are equal"
+        else:
+            return "not equal"
+ob1 = A(45)
+ob2 = A(46)
+print("passed values :", ob1.a, ob2.a)
+
+#flashcards
+class flashcards:
+    def __init__(self, word, meaning):
+        self.word = word
+        self.meaning = meaning
+    def __str__(self):
+        return self.word + "(" + self.meaning + ")"
+flash = []
+print("welcome to flashcard! app")
+while True:
+    word = input("enter a word to add to flashcard : ")
+    meaning = input("enter a meaning of the word : ")
+    flash.append(flashcards(word, meaning))
+    option = int(input("enter 0 to add a flashcard or 1 to exit : "))
+    if option:
+        break
+print("your flashcards : ")
+for i in flash:
+    print(">", i)
+
+#capital cwiz
+class capitalquiz:
+    def __init__(self):
+        self.countries = {"india" : "dehli", "france" : "paris", "germany" : "berlin"}
+    def quiz(self):
+        self.score = 0
+        self.total = 0
+    while True:
+        country, capital = random.choice(list(self.countries.items()))
+        ans = input("what is the capital of :", country)
+        print(f"your answer : {ans} the answer : {capital}")
+        total += 1
+        if ans.lower() == capital.lower():
+            print("corect!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            score += 1
+        else:
+            print("WRONG ANSWER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! the correct ansswer is :", capital)
+        option = int(input("enter 0 to continue or 1 to exit: "))
+        if option:
+            print(f"final score = {score} / {total}")
+            break
+print("WELCOME TO CAPITAL QUIZZZZZZZZ!!!!!!!!!!!!!!!!!!!!!!")
+cq = capitalquiz()
+cq.quiz()
