@@ -1,0 +1,38 @@
+#pygam windows
+import pygame
+pygame.init()
+screen = pygame.display.set_mode((400, 5000))
+done = False
+while not done:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = True
+            pygame.quit()
+    pygame.display.flip()
+
+import pygame
+pygame.init()
+screen_width, screen_height = 600, 700
+display_surface = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("we are going to add a background and an image with a penguins!!!")
+background_image = pygame.transform.scale(pygame.image.load("Turkey.png").convert(), (screen_width, screen_height))
+penguin_image = pygame.transform.scale(pygame.image.load("hello penguin.png").convert_alpha(), (200, 200))
+penguin_rect = penguin_image.get_rect(center = (screen_width // 2, screen_height // 2 - 30))
+penguin_text = pygame.font.Font(None,36).render("penguin", True, pygame.Color("black"))
+text_rect = penguin_text.get_rect(center = (screen_width // 2, screen_height // 2 + 110))
+
+def gameloop():
+    clock = pygame.time.Clock()
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+        display_surface.blit(pygame.surface.Surface, (0, 0))
+        display_surface.blit(penguin_image, penguin_rect)
+        display_surface.blit(penguin_text, text_rect)
+        pygame.display.flip()
+        clock.tick(30)
+    pygame.quit()
+if __name__ == "__main__":
+    gameloop()
